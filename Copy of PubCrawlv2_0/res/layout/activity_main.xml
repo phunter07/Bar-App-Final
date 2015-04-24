@@ -119,7 +119,6 @@ Student NO:40108307
             android:layout_height="wrap_content"
             android:layout_below="@+id/pleaseLogin"
             android:layout_marginTop="61dp"
-            android:layout_toLeftOf="@+id/editPassword"
             android:text="@string/username"
             android:textSize="20sp"
             android:textStyle="bold" />
