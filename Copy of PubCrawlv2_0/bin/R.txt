@@ -446,6 +446,7 @@ int drawable loginbutton 0x7f020058
 int drawable main_background 0x7f020059
 int drawable powered_by_google_dark 0x7f02005a
 int drawable powered_by_google_light 0x7f02005b
+int drawable registerbutton 0x7f02005c
 int id B1_5hour_activityMain 0x7f0c008f
 int id B1hour_activityMain 0x7f0c008e
 int id B30minutes_activityMain 0x7f0c008c

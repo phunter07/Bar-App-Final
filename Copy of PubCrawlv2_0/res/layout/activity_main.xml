@@ -33,7 +33,15 @@ Student NO:40108307
     Add the text of "Username" below the text of "Please Login" and set its size 
     and the distance to the "Please Login" text
     -->
-
+<TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pleaseLogin"
+            android:layout_marginTop="61dp"
+            android:text="@string/username"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     <!--
     Add the editText at the right side of the "userName" text and set its hint 
     and the distance to the "Username" text
@@ -82,6 +90,16 @@ Student NO:40108307
     Add the text of "AttemptsLeft" below the text of "Password" and set its size 
     and the distance to the "Username" text 
     -->
+    <TextView
+            android:id="@+id/attemptsLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/password"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:text="@string/attempts_left"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     <!--
     Add the Text at the right side of the "AttemptsLeft" text and set its size 
@@ -113,26 +131,9 @@ Student NO:40108307
             android:background="@drawable/loginbutton"
             android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/pleaseLogin"
-            android:layout_marginTop="61dp"
-            android:text="@string/username"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        
 
-        <TextView
-            android:id="@+id/attemptsLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/password"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:text="@string/attempts_left"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        
 
         <Button
             android:id="@+id/register"
