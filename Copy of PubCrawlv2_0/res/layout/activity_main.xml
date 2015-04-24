@@ -12,7 +12,8 @@ Student NO:40108307
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.version1_0.ClubCrawl.DrinkSelection"
-    android:background="@drawable/appbackgroundmain" >
+    android:background="@drawable/appbackgroundmain"
+    android:visibility="visible" >
 
     <!-- 
     Add the text of"Please Login" at the top of the screen and set its clour, 
@@ -129,6 +130,7 @@ Student NO:40108307
             android:layout_marginTop="22dp"
             android:layout_toRightOf="@+id/userName"
             android:background="@drawable/loginbutton"
+            android:visibility="visible"
             android:textColor="#FFFFFF" />
 
         
@@ -142,6 +144,7 @@ Student NO:40108307
             android:layout_below="@+id/loginNow"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:background="@drawable/registerbutton" />
+            android:background="@drawable/registerbutton" 
+            android:visibility="visible"/>
 
 </RelativeLayout>
