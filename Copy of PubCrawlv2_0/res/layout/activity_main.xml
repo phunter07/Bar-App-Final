@@ -41,6 +41,7 @@ Student NO:40108307
         android:layout_below="@id/pleaseLogin"
         android:layout_marginTop="60dp"
         android:text="@string/username"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <!--
@@ -69,6 +70,7 @@ Student NO:40108307
         android:layout_below="@id/userName"
         android:layout_marginTop="30dp"
         android:text="@string/password"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <!--
@@ -99,6 +101,7 @@ Student NO:40108307
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
         android:text="@string/attempts_left"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <!--
@@ -113,6 +116,7 @@ Student NO:40108307
         android:layout_alignParentRight="true"
         android:layout_marginRight="100dp"
         android:text="@string/leftNmber"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <!--
