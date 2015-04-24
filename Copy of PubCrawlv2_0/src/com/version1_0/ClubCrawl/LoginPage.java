@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.*;
+import android.view.View.OnClickListener;
 import android.widget.*;
 
 public class LoginPage extends Activity {
@@ -34,10 +35,24 @@ public class LoginPage extends Activity {
 		datasource.open();
 		// Find the button of "Login Now"
 		Button buttonLogin = (Button) findViewById(R.id.loginNow);
-		
+		ImageButton helpBtn = (ImageButton) findViewById(R.id.helpButton1);
 		Button buttonRegister = (Button) findViewById(R.id.register);
 		
+		helpBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(LoginPage.this, HelpPage.class);
+				startActivity(intent);
+				
+			}
+		});
+		
+		
 		buttonRegister.setOnClickListener(new View.OnClickListener() {
+			
+			
+			
 			
 			@Override
 			public void onClick(View v) {
@@ -56,9 +71,16 @@ public class LoginPage extends Activity {
 			// Find the edit text of "editPassword" where people can input the
 			// password
 			TextView editPassword = (TextView) findViewById(R.id.editPassword);
-
+			
+			
+			
+			
 			@Override
 			public void onClick(View v) {
+				
+				
+				
+				
 				if (editUserName.getText().length() != 0
 						&& editPassword.getText().length() != 0) {
 					user = datasource.getUserInformation(editUserName.getText()
