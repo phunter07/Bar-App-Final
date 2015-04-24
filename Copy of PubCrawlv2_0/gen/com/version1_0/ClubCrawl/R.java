@@ -2098,29 +2098,28 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f020056;
         public static final int lavs_logo=0x7f020057;
         public static final int loginbutton=0x7f020058;
-        public static final int main_background=0x7f020059;
-        public static final int powered_by_google_dark=0x7f02005a;
-        public static final int powered_by_google_light=0x7f02005b;
-        public static final int registerbutton=0x7f02005c;
+        public static final int powered_by_google_dark=0x7f020059;
+        public static final int powered_by_google_light=0x7f02005a;
+        public static final int registerbutton=0x7f02005b;
     }
     public static final class id {
-        public static final int B1_5hour_activityMain=0x7f0c008f;
-        public static final int B1hour_activityMain=0x7f0c008e;
-        public static final int B30minutes_activityMain=0x7f0c008c;
-        public static final int B45minutes_activityMain=0x7f0c008d;
+        public static final int B1_5hour_activityMain=0x7f0c008d;
+        public static final int B1hour_activityMain=0x7f0c008c;
+        public static final int B30minutes_activityMain=0x7f0c008a;
+        public static final int B45minutes_activityMain=0x7f0c008b;
         public static final int B_submit=0x7f0c0088;
-        public static final int BsetBySelf_activityMain=0x7f0c0090;
+        public static final int BsetBySelf_activityMain=0x7f0c008e;
         public static final int Cancel=0x7f0c0075;
         public static final int ET_editConfirmPassword=0x7f0c0087;
         public static final int ET_editPassword=0x7f0c0085;
         public static final int ET_editUserName=0x7f0c0083;
         public static final int TP_settingClock=0x7f0c0078;
-        public static final int TV1_activityMain=0x7f0c008b;
+        public static final int TV1_activityMain=0x7f0c0089;
         public static final int TV_confirmPassword=0x7f0c0086;
         public static final int TV_password=0x7f0c0084;
         public static final int TV_registerPage=0x7f0c0081;
         public static final int TV_userName=0x7f0c0082;
-        public static final int TVleave_activityMain=0x7f0c0091;
+        public static final int TVleave_activityMain=0x7f0c008f;
         public static final int achieve=0x7f0c0080;
         public static final int action_bar=0x7f0c0046;
         public static final int action_bar_activity_content=0x7f0c0003;
@@ -2135,7 +2134,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c0043;
         public static final int action_mode_bar_stub=0x7f0c0042;
         public static final int action_mode_close_button=0x7f0c0035;
-        public static final int action_settings=0x7f0c0092;
+        public static final int action_settings=0x7f0c0090;
         public static final int activity_chooser_view_content=0x7f0c0036;
         public static final int adjust_height=0x7f0c0009;
         public static final int adjust_width=0x7f0c000a;
@@ -2197,12 +2196,10 @@ containing a value of this type.
         public static final int icon=0x7f0c003b;
         public static final int ifRoom=0x7f0c002b;
         public static final int image=0x7f0c0038;
-        public static final int imageButton2=0x7f0c008a;
         public static final int leftNumber=0x7f0c005b;
         public static final int listMode=0x7f0c0021;
         public static final int list_item=0x7f0c003a;
         public static final int loginNow=0x7f0c005c;
-        public static final int mainback=0x7f0c0089;
         public static final int map=0x7f0c007b;
         public static final int match_parent=0x7f0c0017;
         public static final int middle=0x7f0c0032;
@@ -2316,9 +2313,8 @@ containing a value of this type.
         public static final int google_maps=0x7f03001e;
         public static final int login_page=0x7f03001f;
         public static final int register=0x7f030020;
-        public static final int select_pub_page=0x7f030021;
-        public static final int set_clock=0x7f030022;
-        public static final int support_simple_spinner_dropdown_item=0x7f030023;
+        public static final int set_clock=0x7f030021;
+        public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
         public static final int crawling=0x7f0d0000;
