@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@drawable/appbackgroundmain" >
 
     <fragment
         android:id="@+id/map"
@@ -26,21 +27,24 @@
             />
 
         <Button
+            android:id="@+id/achieve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/stop"
+            android:layout_alignBottom="@+id/stop"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/clubName"
+            android:text="Arrived" />
+
+        <Button
             android:id="@+id/stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:text="I want to stop" />
-
-        <Button
-            android:id="@+id/achieve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/stop"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="30dp"
-            android:text="I have achieved this bar" />
+            android:layout_marginBottom="64dp"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@+id/achieve"
+            android:text="Exit" />
 
     </RelativeLayout>
 
