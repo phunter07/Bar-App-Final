@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:text="The nearest 3 Clubs are shown below" 
+            android:text="Your nearest drink..." 
             android:textColor="#000000"
             android:textSize="30sp"
             />
