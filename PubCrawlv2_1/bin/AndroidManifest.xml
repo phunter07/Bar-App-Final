@@ -36,19 +36,19 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        android:name="com.version1_0.ClubCrawl.MyApplication"
+        android:name="com.version2_1.ClubCrawl.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDek9KgOz7zWUgCg6aox-WlUrAMop_blP0" />
+            android:value="AIzaSyCPhXYEeNoRxMgwbSd9WBP0DD-VSz_70qw" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
-            android:name="com.version1_0.ClubCrawl.LoginPage"
+            android:name="com.version2_1.ClubCrawl.LoginPage"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,20 +56,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HelpPage" >
+        <activity android:name="com.version2_1.ClubCrawl.HelpPage" >
             <intent-filter>
                 <action android:name="android.intent.action.HelpPage"/>
                 <category android:name="android.intent.catergory.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Register" >
+        <activity android:name="com.version2_1.ClubCrawl.Register" >
             <intent-filter>
                 <action android:name="android.intent.action.Register" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectPub" >
+        <activity android:name="com.version2_1.ClubCrawl.SelectPub" >
             <intent-filter>
                 <action android:name="android.intent.action.SelectPub" />
 
@@ -77,7 +77,7 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name=".DrinkSelection">
+            android:name="com.version2_1.ClubCrawl.DrinkSelection">
             <intent-filter>
                 <action android:name="android.intent.action.DrinkSelection"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -85,7 +85,7 @@
             
          </activity>
          <activity 
-            android:name=".PlanCrawl">
+            android:name="com.version2_1.ClubCrawl.PlanCrawl">
             <intent-filter>
                 <action android:name="android.intent.action.PlanCrawl"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -94,7 +94,7 @@
          </activity>
          
          <activity 
-            android:name="com.version1_0.GoogleMap.GoogleMaps">
+            android:name="com.version2_1.GoogleMap.GoogleMaps">
             <intent-filter>
                 <action android:name="android.intent.action.GoogleMaps"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -102,7 +102,7 @@
             
          </activity>
          <activity 
-            android:name="com.version1_0.GoogleMap.ShowNearestClubs">
+            android:name="com.version2_1.GoogleMap.ShowNearestClubs">
             <intent-filter>
                 <action android:name="android.intent.action.QuickDrink"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -110,7 +110,7 @@
             
          </activity>
         <activity
-            android:name="com.version1_0.ClubCrawl.SetClock"
+            android:name="com.version2_1.ClubCrawl.SetClock"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SetClock" />
@@ -119,9 +119,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.version1_0.ClubCrawl.AlarmReceiver" />
+        <receiver android:name="com.version2_1.ClubCrawl.AlarmReceiver" />
 
-        <service android:name="com.version1_0.ClubCrawl.MusicService" />
+        <service android:name="com.version2_1.ClubCrawl.MusicService" />
     </application>
 
 </manifest>
