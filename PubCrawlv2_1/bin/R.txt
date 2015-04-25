@@ -442,8 +442,9 @@ int drawable powered_by_google_light 0x7f02005b
 int drawable pub_crawl 0x7f02005c
 int drawable pubrules 0x7f02005d
 int drawable quick_drink 0x7f02005e
-int drawable registerbutton 0x7f02005f
-int drawable submitbutton 0x7f020060
+int drawable quick_drink_img 0x7f02005f
+int drawable registerbutton 0x7f020060
+int drawable submitbutton 0x7f020061
 int id B_submit 0x7f080078
 int id ET_editConfirmPassword 0x7f080077
 int id ET_editPassword 0x7f080075
