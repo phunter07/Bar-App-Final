@@ -7,6 +7,7 @@ package com.version2_1.GoogleMap;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
 import java.util.LinkedList;
 
 import android.app.Dialog;
@@ -30,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import com.version1_0.ClubCrawl.R;
 import com.version1_0.sqlite.Club;
 import com.version2_1.ClubCrawl.MyApplication;
@@ -80,7 +82,7 @@ public class ShowNearestClubs extends FragmentActivity implements
 
 			@Override
 			public void onClick(View v) {
-				MyApplication.getInstance().exitSystem(); 
+				MyApplication.getInstance().exitSystem();
 
 			}
 		});
@@ -129,51 +131,34 @@ public class ShowNearestClubs extends FragmentActivity implements
 				public void onMapClick(LatLng point) {
 
 					// Already map contain destination location
-					if (mMarkerPoints.size() > 1) {
+					if (mMarkerPoints.size() >= 1) {
 
 						FragmentManager fm = getSupportFragmentManager();
 						mMarkerPoints.clear();
 						mGoogleMap.clear();
 						LatLng startPoint = new LatLng(mLatitude, mLongitude);
 						drawMarker(startPoint);
-					}
-					// draw clubs
+						// draw clubs
 
-					for (Club club : clubList) {
-						
-						drawMarker(new LatLng(club.getLatitude(), club
-								.getLongitude()));
+						for (Club club : clubList) {
 
-
-						// // Checks, whether start and end locations are
-						// captured
-						// if(mMarkerPoints.size() >= 2){
-						// LatLng origin = mMarkerPoints.get(0);
-						// LatLng dest = mMarkerPoints.get(1);
-						//
-						// // Getting URL to the Google Directions API
-						// String url = getDirectionsUrl(origin, dest);
-						//
-						// DownloadTask downloadTask = new DownloadTask();
-						//
-						// // Start downloading json data from Google Directions
-						// API
-						// downloadTask.execute(url);
-						// }
+							drawMarker(new LatLng(club.getLatitude(), club
+									.getLongitude()));
+						}
 					}
 					MyApplication.getInstance().getHashMap()
-					.put("clubList", clubList);
+							.put("clubList", clubList);
 				}
 			});
 		}
 	}
 
-	 @Override
-	 public boolean onCreateOptionsMenu(Menu menu) {
-	 // Inflate the menu; this adds items to the action bar if it is present.
-	 getMenuInflater().inflate(R.menu.main, menu);
-	 return true;
-	 }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 
 	private void drawMarker(LatLng point) {
 		mMarkerPoints.add(point);

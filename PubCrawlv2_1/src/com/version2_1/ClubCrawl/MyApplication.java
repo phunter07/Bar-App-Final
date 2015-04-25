@@ -20,6 +20,7 @@ import com.version1_0.sqlite.ClubDataSource;
 import com.version1_0.sqlite.Club;
 import com.version2_1.GoogleMap.ClubSortComparator;
 
+import android.R;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -28,59 +29,47 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class MyApplication extends Application implements LocationListener {
 
-	private HashMap<String, Object> hashMap=new HashMap<String, Object>();
+	private HashMap<String, Object> hashMap = new HashMap<String, Object>();
 	private List<Club> allClubList;
 	private static MyApplication myApplication;
-	private List<Activity> activityList = new LinkedList<Activity>();  
+	private List<Activity> activityList = new LinkedList<Activity>();
 	private Location myLocation;
 	private ClubDataSource dataSource;
-	
+	LocationManager locationManager;
+	private String networkProvider = LocationManager.NETWORK_PROVIDER;
+	private String GpsProvider = LocationManager.GPS_PROVIDER;
+
 	public MyApplication() {
-	
+
 	}
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		myApplication=this;
-		dataSource =new ClubDataSource(this);
-		
+		myApplication = this;
+		dataSource = new ClubDataSource(this);
+
 		dataSource.open();
 		dataSource.reWriteTable();
 		try {
-			//run the sql script
+			// run the sql script
 			dataSource.insertFromFile(this,R.raw.bars);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		setAllClubList(dataSource.getAllClubs());
-		// Getting LocationManager object from System Service
-					// LOCATION_SERVICE
-					LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-					// Creating a criteria object to retrieve provider
-					Criteria criteria = new Criteria();
-
-					// Getting the name of the best provider
-					String provider = locationManager.getBestProvider(criteria, true);
-
-					// Getting Current Location From GPS
-					setMyLocation(locationManager.getLastKnownLocation(provider));
-					locationManager.requestLocationUpdates(provider, 20000, 2, this);
-					//if find the location, sort the allClubList
-					if(myLocation!=null){
-						Collections.sort(getAllClubList(), new ClubSortComparator(myLocation));
-					}
-					dataSource.close();
+		initLocation();
+		dataSource.close();
 	}
-	
-	
-	public static MyApplication getInstance(){
+
+	public static MyApplication getInstance() {
 		return myApplication;
 	}
 
@@ -92,24 +81,25 @@ public class MyApplication extends Application implements LocationListener {
 		this.hashMap = hashMap;
 	}
 
-	//add the current activity into activityList
-	public void addActivity(Activity activity) {  
-        activityList.add(activity);  
-    }  
-  
-  //exit all activities
-    public void exit() {  
-        for (Activity activity : activityList) {  
-            activity.finish();  
-        }   
-    }
+	// add the current activity into activityList
+	public void addActivity(Activity activity) {
+		activityList.add(activity);
+	}
 
-    public void exitSystem() {  
-        for (Activity activity : activityList) {  
-            activity.finish();  
-        }   
-        System.exit(0);
-    }
+	// exit all activities
+	public void exit() {
+		for (Activity activity : activityList) {
+			activity.finish();
+		}
+	}
+
+	public void exitSystem() {
+		for (Activity activity : activityList) {
+			activity.finish();
+		}
+		System.exit(0);
+	}
+
 	public List<Club> getClubList() {
 		return getAllClubList();
 	}
@@ -122,25 +112,25 @@ public class MyApplication extends Application implements LocationListener {
 	public void onLocationChanged(Location location) {
 		this.setMyLocation(location);
 		Collections.sort(getAllClubList(), new ClubSortComparator(myLocation));
-		
+
 	}
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onProviderEnabled(String provider) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onProviderDisabled(String provider) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Location getMyLocation() {
@@ -157,6 +147,48 @@ public class MyApplication extends Application implements LocationListener {
 
 	private void setAllClubList(List<Club> allClubList) {
 		this.allClubList = allClubList;
-	} 
-	
+	}
+	public void initLocation(){
+		// Getting LocationManager object from System Service
+				// LOCATION_SERVICE
+		locationManager= (LocationManager) getSystemService(LOCATION_SERVICE); 
+			        
+			        if (!startLocation(networkProvider)) {  
+			        	  if(!startLocation(GpsProvider)){  
+			        		  Toast.makeText(this, "Can not get gps", 5000).show();
+			        } 		              
+			        }  
+			    } 
+			    private boolean startLocation(String provider){  
+			        Location location = locationManager.getLastKnownLocation(provider);  
+	  
+			        locationManager.requestLocationUpdates(provider, 20000, 2, this);  
+			          
+			        if (location!= null) {  
+			            this.myLocation=location;  
+			            return true;  
+			        }  
+			        return false;  
+			          
+			    }  
 }
+//				
+//
+//				// Creating a criteria object to retrieve provider
+//				Criteria criteria = new Criteria();
+//
+//				// Getting the name of the best provider
+//				// String provider = locationManager.getBestProvider(criteria, true);
+//				String provider = locationManager.getBestProvider(criteria, true);
+//
+//				// Getting Current Location From GPS
+//				setMyLocation(locationManager.getLastKnownLocation(provider));
+//				locationManager.requestLocationUpdates(provider, 20000, 2, this);
+//				// if find the location, sort the allClubList
+//				if (myLocation != null) {
+//					Collections.sort(getAllClubList(), new ClubSortComparator(
+//							myLocation));
+//				}
+//	}
+//
+//}

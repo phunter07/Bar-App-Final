@@ -47,7 +47,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+
 import com.version1_0.ClubCrawl.R;
+
 import com.version1_0.sqlite.Club;
 import com.version2_1.ClubCrawl.MyApplication;
 import com.version2_1.ClubCrawl.SetClock;
@@ -73,7 +75,7 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 		clubList = (LinkedList<Club>) MyApplication.getInstance().getHashMap()
 				.get("clubList");
 		achieve = (Button) findViewById(R.id.achieve);
-		leave=(Button)findViewById(R.id.stop);
+		leave = (Button) findViewById(R.id.stop);
 		clubName = (TextView) findViewById(R.id.clubName);
 		clubName.setText(clubList.peek().getName());
 		achieve.setOnClickListener(new OnClickListener() {
@@ -96,7 +98,7 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 
 			@Override
 			public void onClick(View v) {
-				MyApplication.getInstance().exitSystem(); 
+				MyApplication.getInstance().exitSystem();
 
 			}
 		});
@@ -126,13 +128,11 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 
 			// Enable MyLocation Button in the Map
 			mGoogleMap.setMyLocationEnabled(true);
-			
 
 			// Getting Current Location From GPS
-			Location location=MyApplication.getInstance().getMyLocation();
-			
-			
-			//resort the clubList
+			Location location = MyApplication.getInstance().getMyLocation();
+
+			// resort the clubList
 			if (location != null) {
 				onLocationChanged(location);
 				Collections.sort(clubList, new ClubSortComparator(location));
@@ -146,28 +146,28 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 				public void onMapClick(LatLng point) {
 
 					// Already map contain destination location
-					if (mMarkerPoints.size() > 1) {
+					if (mMarkerPoints.size() >= 1) {
 
 						FragmentManager fm = getSupportFragmentManager();
 						mMarkerPoints.clear();
 						mGoogleMap.clear();
 						LatLng startPoint = new LatLng(mLatitude, mLongitude);
 						drawMarker(startPoint);
+						if (clubList != null) {
+
+							drawMarker(new LatLng(
+									clubList.peek().getLatitude(), clubList
+											.peek().getLongitude()));							
+						}
+
 					}
-					
-					if (clubList != null) {
-						
-						drawMarker(new LatLng(clubList.peek().getLatitude(),
-								clubList.peek().getLongitude()));
-					}
-					
-					
+
 					// Checks, whether start and end locations are captured
 					if (mMarkerPoints.size() >= 2) {
-						
+
 						LatLng origin = mMarkerPoints.get(0);
 						LatLng dest = mMarkerPoints.get(1);
-						
+
 						// Getting URL to the Google Directions API
 						String url = getDirectionsUrl(origin, dest);
 
@@ -176,11 +176,11 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 						// Start downloading json data from Google Directions
 						// API
 						downloadTask.execute(url);
-						
+
 					}
-					
+
 				}
-				
+
 			});
 		}
 	}
@@ -352,7 +352,7 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 	}
 
 	private void drawMarker(LatLng point) {
-		
+
 		mMarkerPoints.add(point);
 
 		// Creating MarkerOptions
@@ -362,17 +362,16 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 		options.position(point);
 
 		/**
-		 * For the start location, the colour of marker is GREEN and for the end
-		 * location, the colour of marker is RED.
+		 * For the start location, the color of marker is GREEN and for the end
+		 * location, the color of marker is RED.
 		 */
 		if (mMarkerPoints.size() == 1) {
 			options.icon(BitmapDescriptorFactory
 					.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
 		} else if (mMarkerPoints.size() == 2) {
-			
+
 			options.icon(BitmapDescriptorFactory
 					.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-			Log.i("Location","nihao");
 		}
 
 		// Add new marker to the Google Map Android API V2
@@ -387,7 +386,8 @@ public class GoogleMaps extends FragmentActivity implements LocationListener {
 			mLatitude = location.getLatitude();
 			mLongitude = location.getLongitude();
 			LatLng point = new LatLng(mLatitude, mLongitude);
-			Log.i("move Camera",String.valueOf(location.getLatitude())+String.valueOf(location.getLongitude()));
+			Log.i("move Camera", String.valueOf(location.getLatitude())
+					+ String.valueOf(location.getLongitude()));
 			mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 12));
 			mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(12));
 			drawMarker(point);

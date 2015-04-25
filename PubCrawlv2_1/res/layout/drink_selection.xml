@@ -29,7 +29,7 @@ TODO replace with image
         android:layout_marginBottom="30dp"
         android:layout_marginTop="30dp"
         android:layout_weight="1"
-        android:background="@drawable/PYC2"
+        android:background="@drawable/pyc2"
         android:text="" />
 
 </LinearLayout>

@@ -9,7 +9,6 @@ package com.version2_1.ClubCrawl;
 import java.io.IOException;
 import java.util.LinkedList;
 
-import com.version1_0.ClubCrawl.R;
 import com.version1_0.sqlite.Club;
 
 import android.app.AlertDialog;

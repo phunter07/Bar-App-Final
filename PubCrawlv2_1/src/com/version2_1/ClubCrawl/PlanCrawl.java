@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
 import java.util.HashMap;
 
 import com.version1_0.ClubCrawl.R;
@@ -24,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -52,11 +54,13 @@ import android.widget.TextView;
  * @author Matt
  * 
  */
-public class PlanCrawl extends Activity {
+public class PlanCrawl extends ListActivity {
 
-	ListView listView;
+	ListView checkedListView;
+	ListView showListView;
 	Context mContext;
-	MyListAdapter adapter;
+	MyListAdapter checkedAdapter;
+	
 	List<Integer> listItemID = new ArrayList<Integer>();
 	List<Club> clubList;
 
@@ -71,6 +75,7 @@ public class PlanCrawl extends Activity {
 		setContentView(R.layout.activity_plan_crawl);
 		// add itself into activityList
 		MyApplication.getInstance().addActivity(this);
+		
 		Button start = (Button) findViewById(R.id.start);
 		Button cancle=(Button) findViewById(R.id.cancel);
 		// use method getAllComments() of datasource and
@@ -78,11 +83,11 @@ public class PlanCrawl extends Activity {
 
 		mContext = getApplicationContext();
 
-		listView = (ListView) findViewById(R.id.clubListView);
+		checkedListView = (ListView) findViewById(R.id.clubListView);
 
-		adapter = new MyListAdapter(clubList);
-		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new OnItemClickListener() {
+		checkedAdapter = new MyListAdapter(clubList);
+		checkedListView.setAdapter(checkedAdapter);
+		checkedListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -91,7 +96,19 @@ public class PlanCrawl extends Activity {
 				ViewHolder holder=(ViewHolder) view.getTag();
 				//change the status of checkBox
 				holder.checked.toggle();
-				adapter.mChecked.set(position, holder.checked.isChecked());
+				checkedAdapter.mChecked.set(position, holder.checked.isChecked());
+				//Show in list view
+				List<Club> checkedClub = new LinkedList<Club>();
+				// check if the checkbox is checked
+				for (int loop = 0; loop < checkedAdapter.mChecked.size(); loop++) {
+					if (checkedAdapter.mChecked.get(loop)) {
+						checkedClub.add(clubList.get(loop));
+
+					}
+				}
+				ArrayAdapter<Club> adapter = new ArrayAdapter<Club>(PlanCrawl.this,
+						android.R.layout.simple_list_item_1, checkedClub);
+				setListAdapter(adapter);
 				
 			}
 		});
@@ -102,8 +119,8 @@ public class PlanCrawl extends Activity {
 			public void onClick(View v) {
 				List<Club> checkedClub = new LinkedList<Club>();
 				// check if the checkbox is checked
-				for (int loop = 0; loop < adapter.mChecked.size(); loop++) {
-					if (adapter.mChecked.get(loop)) {
+				for (int loop = 0; loop < checkedAdapter.mChecked.size(); loop++) {
+					if (checkedAdapter.mChecked.get(loop)) {
 						checkedClub.add(clubList.get(loop));
 
 					}
@@ -125,11 +142,33 @@ public class PlanCrawl extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				adapter = new MyListAdapter(clubList);
-				listView.setAdapter(adapter);
+				
+				checkedAdapter = new MyListAdapter(clubList);
+				checkedListView.setAdapter(checkedAdapter);
 				
 			}
 		});
+	}
+	
+	@Override
+	protected void onResume() {
+
+		super.onResume();
+		LinkedList<Club> checkedClub =  (LinkedList<Club>) MyApplication.getInstance().getHashMap().get("clubList");
+		if(checkedClub!=null){
+		if(!checkedClub.isEmpty()){
+			ArrayAdapter<Club> adapter = new ArrayAdapter<Club>(this,
+					android.R.layout.simple_list_item_1, checkedClub);
+			setListAdapter(adapter);
+			}else{
+				List<String> data=new ArrayList<String>();
+				data.add("No club");
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+						android.R.layout.simple_list_item_1, data);
+				setListAdapter(adapter);
+				
+			}
+		}
 	}
 
 	@Override
