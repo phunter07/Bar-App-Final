@@ -1,10 +1,10 @@
 
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/appbackgroundmain"
     tools:context="com.example.baronimo.QuickDrink"
     tools:ignore="MergeRootFrame" >
 
@@ -12,9 +12,10 @@
         android:id="@+id/txtQuick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textQuick"
         android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:text="@string/textQuick"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="white" />
     
 </FrameLayout>
 
