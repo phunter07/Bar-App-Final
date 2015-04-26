@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/appbackgroundmainwooden"
@@ -8,6 +8,36 @@
     <VideoView
         android:id="@+id/loveBelfastVideo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="205dp" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/valueCab"
+        android:layout_below="@+id/valueCab"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/redbutton"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/fonaCab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loveBelfastVideo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/redbutton"
+        android:text="Fona Cab" />
+
+    <Button
+        android:id="@+id/valueCab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fonaCab"
+        android:layout_below="@+id/fonaCab"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redbutton"
+        android:text="Value Cabs" />
+
+</RelativeLayout>

@@ -2113,16 +2113,16 @@ containing a value of this type.
         public static final int yellowbutton=0x7f020065;
     }
     public static final class id {
-        public static final int B_submit=0x7f0c007b;
-        public static final int ET_editConfirmPassword=0x7f0c007a;
-        public static final int ET_editPassword=0x7f0c0078;
-        public static final int ET_editUserName=0x7f0c0076;
+        public static final int B_submit=0x7f0c007e;
+        public static final int ET_editConfirmPassword=0x7f0c007d;
+        public static final int ET_editPassword=0x7f0c007b;
+        public static final int ET_editUserName=0x7f0c0079;
         public static final int TP_settingClock=0x7f0c005b;
-        public static final int TV_confirmPassword=0x7f0c0079;
-        public static final int TV_password=0x7f0c0077;
-        public static final int TV_registerPage=0x7f0c0075;
-        public static final int TV_userName=0x7f0c0074;
-        public static final int TVleave_activityMain=0x7f0c007c;
+        public static final int TV_confirmPassword=0x7f0c007c;
+        public static final int TV_password=0x7f0c007a;
+        public static final int TV_registerPage=0x7f0c0078;
+        public static final int TV_userName=0x7f0c0077;
+        public static final int TVleave_activityMain=0x7f0c007f;
         public static final int achieve=0x7f0c0064;
         public static final int action_bar=0x7f0c0046;
         public static final int action_bar_activity_content=0x7f0c0003;
@@ -2137,7 +2137,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c0043;
         public static final int action_mode_bar_stub=0x7f0c0042;
         public static final int action_mode_close_button=0x7f0c0035;
-        public static final int action_settings=0x7f0c0080;
+        public static final int action_settings=0x7f0c0083;
         public static final int activity_chooser_view_content=0x7f0c0036;
         public static final int adjust_height=0x7f0c0009;
         public static final int adjust_width=0x7f0c000a;
@@ -2152,7 +2152,7 @@ containing a value of this type.
         public static final int buy_now=0x7f0c001a;
         public static final int buy_with_google=0x7f0c001b;
         public static final int cancel=0x7f0c0056;
-        public static final int cancelClock=0x7f0c007e;
+        public static final int cancelClock=0x7f0c0081;
         public static final int checkbox=0x7f0c003e;
         public static final int classic=0x7f0c001d;
         public static final int clubListView=0x7f0c0058;
@@ -2171,6 +2171,7 @@ containing a value of this type.
         public static final int end=0x7f0c0031;
         public static final int expand_activities_button=0x7f0c0037;
         public static final int expanded_menu=0x7f0c003d;
+        public static final int fonaCab=0x7f0c0074;
         public static final int grayscale=0x7f0c001e;
         public static final int group=0x7f0c0054;
         public static final int helpButton1=0x7f0c0070;
@@ -2178,13 +2179,14 @@ containing a value of this type.
         public static final int holo_light=0x7f0c0011;
         public static final int home=0x7f0c0000;
         public static final int homeAsUp=0x7f0c0024;
+        public static final int homeBtn=0x7f0c0076;
         public static final int homeButton=0x7f0c0057;
         public static final int hybrid=0x7f0c000c;
         public static final int icon=0x7f0c003b;
         public static final int ifRoom=0x7f0c002b;
         public static final int image=0x7f0c0038;
         public static final int leftNumber=0x7f0c006c;
-        public static final int left_clubs=0x7f0c007f;
+        public static final int left_clubs=0x7f0c0082;
         public static final int linearLayout1=0x7f0c006f;
         public static final int listMode=0x7f0c0021;
         public static final int list_checkBox=0x7f0c0066;
@@ -2219,7 +2221,7 @@ containing a value of this type.
         public static final int search_src_text=0x7f0c004f;
         public static final int search_voice_btn=0x7f0c0053;
         public static final int selectionDetails=0x7f0c0016;
-        public static final int setClock_activityMain=0x7f0c007d;
+        public static final int setClock_activityMain=0x7f0c0080;
         public static final int shortcut=0x7f0c003f;
         public static final int showCustom=0x7f0c0025;
         public static final int showHome=0x7f0c0026;
@@ -2239,6 +2241,7 @@ containing a value of this type.
         public static final int up=0x7f0c0001;
         public static final int useLogo=0x7f0c0028;
         public static final int userName=0x7f0c0069;
+        public static final int valueCab=0x7f0c0075;
         public static final int videoButton=0x7f0c005e;
         public static final int withText=0x7f0c002d;
         public static final int wrap_content=0x7f0c0018;
