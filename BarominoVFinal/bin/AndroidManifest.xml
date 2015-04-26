@@ -62,6 +62,15 @@
                 <category android:name="android.intent.catergory.DEFAULT"/>
             </intent-filter>
         </activity>
+        
+         <activity android:name=".LoveBelfastVideo" >
+            <intent-filter>
+                <action android:name="android.intent.action.LoveBelfastVideo"/>
+                <category android:name="android.intent.catergory.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        
         <activity android:name=".Register" >
             <intent-filter>
                 <action android:name="android.intent.action.Register" />

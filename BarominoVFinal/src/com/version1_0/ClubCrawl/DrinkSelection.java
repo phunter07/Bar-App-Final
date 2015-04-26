@@ -7,6 +7,7 @@ package com.version1_0.ClubCrawl;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +17,7 @@ import android.view.View.OnClickListener;
 import com.version1_0.ClubCrawl.R;
 
 public class DrinkSelection extends Activity implements OnClickListener {
-
+	private MediaPlayer mediaPlayer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,8 +27,19 @@ public class DrinkSelection extends Activity implements OnClickListener {
 		// setting buttons for DrinkSelection Screen
 		Button btnQuick = (Button) findViewById(R.id.btnQuick);
 		Button btnPlan = (Button) findViewById(R.id.btnPlan);
+		Button vidBtn = (Button) findViewById(R.id.videoButton);
 		btnQuick.setOnClickListener(this);
 		btnPlan.setOnClickListener(this);
+		mediaPlayer = MediaPlayer.create(this, R.raw.nightlife_belfast);
+		vidBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(DrinkSelection.this,LoveBelfastVideo.class);
+				startActivity(intent);
+				
+			}
+		});
 	}
 
 	@Override
