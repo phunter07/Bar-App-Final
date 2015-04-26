@@ -4,7 +4,7 @@ package com.version1_0.ClubCrawl;
  * the class represents receiver, the application will continuously receive the alarm of the system,
  * then get the current time and compare it to the setting time, if the current time equal the 
  * setting time, it call the music service
- * @author Jiang Zhe Heng
+ * @author Team Baromino
  */
 import java.util.Calendar;
 

@@ -2,7 +2,7 @@ package com.version1_0.ClubCrawl;
 
 /**
  * the class represents register activity, new user can register on this activity
- * @author Jiang Zhe Heng
+ * @author Team Baromino
  */
 import com.version1_0.sqlite.RUSDataSource;
 import com.version1_0.sqlite.RegisteredUser;

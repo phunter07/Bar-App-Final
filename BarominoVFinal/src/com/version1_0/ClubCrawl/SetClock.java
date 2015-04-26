@@ -2,7 +2,7 @@ package com.version1_0.ClubCrawl;
 
 /**
  * the class represents the set clock activity, the user can set the clock in this activity
- * @author Jiang Zhe Heng
+ * @author Team Baromino
  */
 import java.util.ArrayList;
 import java.util.Calendar;

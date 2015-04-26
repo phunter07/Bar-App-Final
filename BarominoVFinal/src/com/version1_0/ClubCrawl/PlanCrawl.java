@@ -49,7 +49,7 @@ import android.widget.TextView;
  * Swipe right to see currently selected bars and route displayed on a map -
  * numbered place holders?
  * 
- * @author Matt
+ * @author Team Baromino
  * 
  */
 public class PlanCrawl extends Activity {
@@ -72,16 +72,16 @@ public class PlanCrawl extends Activity {
 		// add itself into activityList
 		MyApplication.getInstance().addActivity(this);
 		Button start = (Button) findViewById(R.id.start);
-		Button cancle=(Button) findViewById(R.id.cancel);
+		Button cancle = (Button) findViewById(R.id.cancel);
 		Button homeButton = (Button) findViewById(R.id.homeButton);
-
+		// brings the user back to the home page
 		homeButton.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(PlanCrawl.this, DrinkSelection.class);
 				startActivity(intent);
-				
+
 			}
 		});
 		// use method getAllComments() of datasource and
@@ -98,12 +98,12 @@ public class PlanCrawl extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				//get viewHolder
-				ViewHolder holder=(ViewHolder) view.getTag();
-				//change the status of checkBox
+				// get viewHolder
+				ViewHolder holder = (ViewHolder) view.getTag();
+				// change the status of checkBox
 				holder.checked.toggle();
 				adapter.mChecked.set(position, holder.checked.isChecked());
-				
+
 			}
 		});
 
@@ -133,12 +133,12 @@ public class PlanCrawl extends Activity {
 
 		});
 		cancle.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				adapter = new MyListAdapter(clubList);
 				listView.setAdapter(adapter);
-				
+
 			}
 		});
 	}
@@ -204,8 +204,10 @@ public class PlanCrawl extends Activity {
 				LayoutInflater inflater = (LayoutInflater) mContext
 						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				convertView = inflater.inflate(R.layout.list_item, null);
-				holder.checked =  (CheckBox) convertView.findViewById(R.id.list_checkBox);
-				holder.name =  (TextView) convertView.findViewById(R.id.list_name);
+				holder.checked = (CheckBox) convertView
+						.findViewById(R.id.list_checkBox);
+				holder.name = (TextView) convertView
+						.findViewById(R.id.list_name);
 
 				convertView.setTag(holder);
 			} else {
@@ -214,7 +216,7 @@ public class PlanCrawl extends Activity {
 			}
 
 			holder.name.setText(clubList.get(position).getName());
-			
+
 			holder.checked.setChecked(mChecked.get(position));
 			return convertView;
 		}
@@ -224,7 +226,7 @@ public class PlanCrawl extends Activity {
 	/**
 	 * the class represent the view of an item of a list view
 	 * 
-	 * @author Jiang Zhe Heng
+	 * @author Team Baromino
 	 * 
 	 */
 	static class ViewHolder {

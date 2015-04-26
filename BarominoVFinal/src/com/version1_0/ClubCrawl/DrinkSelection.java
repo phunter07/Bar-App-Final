@@ -1,5 +1,10 @@
 package com.version1_0.ClubCrawl;
-
+/**
+ * Brings the user to select their activity
+ * Either a quick drink ( three closest pubs)
+ * Or a Planned crawl were the user can select the pubs they want on their crawl
+ * @author Team Baromino
+ */
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,7 +49,8 @@ public class DrinkSelection extends Activity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
-	// Method for btnQuick layout change
+	// Method for btnQuick layout change - brings the user to google maps with
+	// the 3 closest bars to their location
 	public void onClick(View v) {
 		Intent intent = new Intent();
 		switch (v.getId()) {

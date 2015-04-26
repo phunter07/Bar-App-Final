@@ -3,7 +3,7 @@ package com.version1_0.ClubCrawl;
 /**
  * This is the main application, it is the entrance of the application, 
  * so I can set the global vars here
- * @author Jiang Zhe Heng
+ * @author Team Baromino
  */
 import java.io.BufferedReader;
 import java.io.IOException;

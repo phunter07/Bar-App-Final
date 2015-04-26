@@ -1,7 +1,7 @@
 package com.version1_0.ClubCrawl;
 
 /**
- * Student Name: Jiang Zhe Heng Student 
+ * Team Baromino
  *  This class inherits
  * ActionBarActivity class
  * 
@@ -39,6 +39,7 @@ public class LoginPage extends Activity {
 
 		ImageButton helpBtn = (ImageButton) findViewById(R.id.helpButton1);
 
+		// register click with the help button - brings you to the rules section
 		helpBtn.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -48,6 +49,8 @@ public class LoginPage extends Activity {
 
 			}
 		});
+		// register click with the register button - brings you to the register
+		// page
 		buttonRegister.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -135,21 +138,21 @@ public class LoginPage extends Activity {
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
+
 		super.onPostResume();
 		datasource.open();
 	}
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
+
 		super.onPause();
 		datasource.close();
 	}
 
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
+
 		super.onDestroy();
 	}
 

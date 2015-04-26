@@ -4,7 +4,7 @@ package com.version1_0.ClubCrawl;
  * This class represents the music service, when reach the time, 
  * this service will start the alarm music and vibrator the phone, 
  * then give a dialog for user to select going to the next club or extending.
- * @author Jiang Zhe Heng
+ * @author Team Baromino
  */
 import java.io.IOException;
 import java.util.LinkedList;
@@ -40,7 +40,7 @@ public class MusicService extends Service {
 
 		return null;
 	}
-
+	// method that calls the alarm sound when the time has been reached
 	public void onCreate() {
 		Log.i("service_create", "hello");
 		clubList = (LinkedList<Club>) MyApplication.getInstance().getHashMap()
