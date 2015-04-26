@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/appbackgroundmainwooden"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TVleave_activityMain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:text="Leaving Time "
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/setClock_activityMain"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Start"
+            android:text="Set Clock" />
+
+        <Button
+            android:id="@+id/cancelClock"
+            android:layout_width="98dp"
+            android:layout_height="44dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Cancel"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Start"
+            android:text="Home" />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/left_clubs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:text="Pubs in Crawl"
+        android:textSize="30sp" />
+
+    <ListView
+         android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>

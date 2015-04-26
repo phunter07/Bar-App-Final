@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbackgroundmainwooden"
+	android:orientation="vertical"
+    tools:context="com.example.baronimo.MainActivity" >
+    
+<!-- button to link to Quick Crawl Page
+TODO replace with image
+ -->
+
+    <Button
+        android:id="@+id/btnQuick"
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/quickdrinkfinal" />
+
+<!-- button to link to Plan Crawl Page
+TODO replace with image
+ -->
+
+    <Button
+        android:id="@+id/btnPlan"
+        android:layout_width="match_parent"
+        android:layout_height="201dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pyc2" />
+
+</LinearLayout>

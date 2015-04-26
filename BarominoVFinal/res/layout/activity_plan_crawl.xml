@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/appbackgroundmainwooden"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="92dp"
+            android:layout_height="43dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Start"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="96dp"
+            android:layout_height="44dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Cancel"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="92dp"
+            android:layout_height="43dp"
+            android:background="@drawable/redbutton"
+            android:onClick="Start"
+            android:text="Home" />
+
+    </LinearLayout>
+
+        <ListView
+            android:id="@+id/clubListView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        
+    </LinearLayout>
+
