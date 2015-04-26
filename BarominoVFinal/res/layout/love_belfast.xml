@@ -10,15 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="205dp" />
 
-    <Button
-        android:id="@+id/homeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/valueCab"
-        android:layout_below="@+id/valueCab"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/redbutton"
-        android:text="Home" />
+   
 
     <Button
         android:id="@+id/fonaCab"
@@ -39,5 +31,13 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/redbutton"
         android:text="Value Cabs" />
-
+ <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/valueCab"
+        android:layout_below="@+id/valueCab"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/redbutton"
+        android:text="Home" />
 </RelativeLayout>

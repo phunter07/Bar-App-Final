@@ -21,13 +21,13 @@ public class LoveBelfastVideo extends Activity {
 		Button valueBtn = (Button) findViewById(R.id.valueCab);
 		Button homeBtm = (Button) findViewById(R.id.homeBtn);
 
-		homeBtm.setOnClickListener(new View.OnClickListener() {
+		fonaBtn.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intentHome = new Intent(LoveBelfastVideo.this,
-						DrinkSelection.class);
-				startActivity(intentHome);
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri
+						.parse(FONA_CAB));
+				startActivity(intent);
 
 			}
 		});
@@ -43,17 +43,17 @@ public class LoveBelfastVideo extends Activity {
 			}
 		});
 
-		fonaBtn.setOnClickListener(new View.OnClickListener() {
+	
+		homeBtm.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(Intent.ACTION_VIEW, Uri
-						.parse(FONA_CAB));
-				startActivity(intent);
+				Intent intentHome = new Intent(LoveBelfastVideo.this,
+						DrinkSelection.class);
+				startActivity(intentHome);
 
 			}
 		});
-
 		VideoView vid = (VideoView) findViewById(R.id.loveBelfastVideo);
 
 		String urlPath = "android.resource://" + getPackageName() + "/"
